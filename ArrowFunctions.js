@@ -32,3 +32,31 @@ nums.forEach((v) => {
   }
 });
 console.log(fives);
+
+//ES6 Lexical this
+var obj = {
+  func: () => {
+    var name = 'Sandy';
+    var newFunc = () => {
+      console.log(name);
+    };
+    newFunc();
+  }
+};
+obj.func();
+
+// (function () {
+// 'use strict';
+//
+// var obj = {
+//   func: function () {
+//     var name = 'Sandy';
+//     function newFunc() {
+//       console.log(name);
+//     }
+//     newFunc();
+//   }
+// };
+// obj.func();
+//
+// })();
